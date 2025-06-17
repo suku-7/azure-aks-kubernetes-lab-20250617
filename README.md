@@ -1,7 +1,7 @@
 # Model
 ## azure-aks-kubernetes-lab-20250617
-이 문서는 Azure Kubernetes Service (AKS) 클러스터 환경에서 Spring Boot 기반 애플리케이션을 배포하고 관리하는 일련의 과정을 담고 있습니다.
-Gitpod을 개발 환경으로 활용하여 AKS 클러스터 설정부터 애플리케이션 배포, 업데이트, 스케일링, 로드 밸런싱 및 YAML 파일을 통한 선언적 관리를 실습했습니다.
+이 문서는 Azure Kubernetes Service (AKS) 클러스터 환경에서 Spring Boot 기반 애플리케이션을 배포하고 관리하는 일련의 과정을 담고 있습니다.  
+Gitpod을 개발 환경으로 활용하여 AKS 클러스터 설정부터 애플리케이션 배포, 업데이트, 스케일링, 로드 밸런싱 및 YAML 파일을 통한 선언적 관리를 실습했습니다.  
 
 ## 사전 준비
 Azure 계정 및 구독, Gitpod 워크스페이스, monolith-order Spring Boot 애플리케이션 코드
