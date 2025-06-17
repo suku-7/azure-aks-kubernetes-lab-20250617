@@ -3,12 +3,20 @@
 이 문서는 Azure Kubernetes Service (AKS) 클러스터 환경에서 Spring Boot 기반 애플리케이션을 배포하고 관리하는 일련의 과정을 담고 있습니다.
 Gitpod을 개발 환경으로 활용하여 AKS 클러스터 설정부터 애플리케이션 배포, 업데이트, 스케일링, 로드 밸런싱 및 YAML 파일을 통한 선언적 관리를 실습했습니다.
 
-
-
-
-
 ##사전 준비
 Azure 계정 및 구독, Gitpod 워크스페이스, monolith-order Spring Boot 애플리케이션 코드
+
+![스크린샷 2025-06-17 100224](https://github.com/user-attachments/assets/688aa955-f530-45e3-9d65-510f1eac29df)
+![스크린샷 2025-06-17 100321](https://github.com/user-attachments/assets/46bf14c5-c108-47e4-9a39-9a8fa4ac6cd4)
+![스크린샷 2025-06-17 100427](https://github.com/user-attachments/assets/9c7d64ce-8646-437f-913f-e377eba3ab7e)
+![스크린샷 2025-06-17 111456](https://github.com/user-attachments/assets/5b199902-182c-4101-939c-5cd1669d1020)
+![스크린샷 2025-06-17 112651](https://github.com/user-attachments/assets/d7bcb5c3-a729-4396-a7ec-aaba95c1a952)
+![스크린샷 2025-06-17 114632](https://github.com/user-attachments/assets/c7885cdb-2019-4e65-9704-a88eb8cbf572)
+![스크린샷 2025-06-17 115318](https://github.com/user-attachments/assets/b8e84dc8-f62b-4631-8a52-9e4526a5b20c)
+![스크린샷 2025-06-17 120739](https://github.com/user-attachments/assets/a905c2a6-0cc2-43e6-9a37-4ee12f8d9525)
+![스크린샷 2025-06-17 121047](https://github.com/user-attachments/assets/5fecbc08-b7dd-49d7-ac01-4e1a5a2d0020)
+![스크린샷 2025-06-17 122016](https://github.com/user-attachments/assets/e6c19601-f01b-485f-b5b3-f785649e46a9)
+![스크린샷 2025-06-17 122803](https://github.com/user-attachments/assets/a5ec3c6b-aacc-41f5-b2ab-6b0ba6d52afd)
 
 ##실습 단계
 1. Azure 환경 초기 설정
@@ -87,10 +95,10 @@ kubectl set image deploy order monolith-order=jinyoung/monolith-order:v20210504
 
 # 업데이트 진행 상황 및 리소스 상태 확인
 kubectl get all
-```
+
 # (선택 사항) 이전 버전의 파드가 아직 남아있다면 수동으로 삭제하여 업데이트 촉진 (Deployment가 새 파드 생성)
 # kubectl delete pod <old-pod-name>
-
+```
 - 참고: kubectl set image 명령은 Deployment의 롤링 업데이트 기능을 활용하여, 기존 ReplicaSet과 새로운 ReplicaSet을 통해 파드를 점진적으로 교체함으로써 무중단으로 애플리케이션 버전을 업데이트합니다. Deployment는 항상 'Desired' 파드 개수를 유지하며, 파드가 삭제되면 자동으로 재생성하여 서비스의 안정성을 보장합니다.
 
 8. 파드 항상성 유지 테스트 (Self-healing)
